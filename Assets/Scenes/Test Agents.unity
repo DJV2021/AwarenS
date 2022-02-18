@@ -4673,16 +4673,16 @@ MonoBehaviour:
   isDestination: 0
   speed: 1
   FOVRadius: 5
-  coefInertie: 250
+  coefInertia: 250
   coefDirection: 1
-  coefDistanciation: 1
-  coefGroupement: 1
-  varSpeed: 0
-  varFOV: 0
-  varInertie: 0
-  varDirection: 0
-  varDistanciation: 0
-  varGroupement: 0
+  coefDistancing: 1
+  coefGrouping: 1
+  varSpeed: 10
+  varFOV: 10
+  varInertia: 10
+  varDirection: 10
+  varDistancing: 10
+  varGrouping: 10
 --- !u!1 &926028814
 GameObject:
   m_ObjectHideFlags: 0
@@ -11112,7 +11112,7 @@ Transform:
   m_GameObject: {fileID: 1696372134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 100}
+  m_LocalScale: {x: 0, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
