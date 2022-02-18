@@ -8,16 +8,16 @@ public class Agent : MonoBehaviour
 
 
     private Vector3 generalDirection;
+    private bool isDestination;
     private float FOVRadius;
 
     private float coefInertie;
     private float coefDirection;
     private float coefDistanciation;
-    private float coefGroupement; 
+    private float coefGroupement;
 
 
     private Rigidbody body;
-    private float radius;
     private Vector3 position;
     private Vector3 direction;
     private float speed;
@@ -25,21 +25,18 @@ public class Agent : MonoBehaviour
 
 
 
-    void Awake()
+    void Start()
     {
-        body = GetComponent<Rigidbody>();
-        radius = GetComponent<Renderer>().bounds.extents.magnitude;
-
-        Debug.Log(radius);
-
         generalDirection = new Vector3(controller.generalDirection.x, 0f, controller.generalDirection.y);
-        speed = controller.speed;
-        FOVRadius = controller.FOVRadius;
-        coefInertie = controller.coefInertie;
-        coefDirection = controller.coefDirection;
-        coefDistanciation = controller.coefDistanciation;
-        coefGroupement = controller.coefGroupement;
+        isDestination = controller.isDestination;
+        speed = controller.speed * Random.Range(1-controller.varSpeed, 1+controller.varSpeed);
+        FOVRadius = controller.FOVRadius * Random.Range(1-controller.varFOV, 1+controller.varFOV);
+        coefInertie = controller.coefInertie * Random.Range(1-controller.varInertie, 1+controller.varInertie);
+        coefDirection = controller.coefDirection * Random.Range(1-controller.varDirection, 1+controller.varDirection);
+        coefDistanciation = controller.coefDistanciation * Random.Range(1-controller.varDistanciation, 1+controller.varDistanciation);
+        coefGroupement = controller.coefGroupement * Random.Range(1-controller.varGroupement, 1+controller.varGroupement);
 
+        body = GetComponent<Rigidbody>();
         direction = new Vector3(Random.Range(-1f,1f), 0, Random.Range(-1f,1f));
         direction.Normalize();
     }
@@ -100,8 +97,14 @@ public class Agent : MonoBehaviour
     private void MaJ_Direction() {
         Vector3 distanciation = Calc_Distanciation();
         Vector3 groupement = Calc_Groupement();
+        
+        if (isDestination) {
+            direction = coefInertie * direction + (generalDirection-position) * coefDirection + distanciation * coefDistanciation + coefGroupement * groupement;
+        }
+        else {
+            direction = coefInertie * direction + generalDirection * coefDirection + distanciation * coefDistanciation + coefGroupement * groupement;
+        }
 
-        direction = coefInertie * direction + generalDirection * coefDirection + distanciation * coefDistanciation + coefGroupement * groupement;
         direction.Normalize();
     }
 
