@@ -19,3 +19,22 @@
 # About
 
 ....
+
+## Setup
+
+* Clone the Project
+* Open in unity as Android Project (click and the version of unity and select "Android")
+* **Oculus**
+  * Add [Oculus integration](https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022) to your assets
+  * Go to the editor, in window > package manager, "My Assets", **download and import Oculus integration**
+  * Put the folder **Oculus** in **Plugins**
+* **ThirdParties**:  Same steps as for the **Oculus** plugin, but files are put in the **ThirdParties** folder
+  * [Distant Lands](https://assetstore.unity.com/packages/3d/characters/distant-lands-free-characters-178123)
+  * [MoveMotionPack](https://assetstore.unity.com/packages/3d/animations/basic-motions-free-pack-25900)
+  * [SimplePoly - Town Pack](https://assetstore.unity.com/packages/3d/environments/simplepoly-town-pack-62400)
+* (**optional**) Download the [GitHub plugin](https://unity.github.com/), then drag and drop the .package in the project explorer, in **Assets/Plugins/GitHub**
+
+## Notes for developers
+
+* [Documentation Oculus Quest](https://developer.oculus.com/documentation/unity/unity-gs-overview/)
+* [The teacher's website](http://web4.ensiie.fr/~bouyer/rvig.html)
