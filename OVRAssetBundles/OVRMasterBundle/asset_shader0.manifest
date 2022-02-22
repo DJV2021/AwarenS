@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 4217048063
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9e87e828cf76adb556a932a1d507fe49
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 68c985bf88fecc38b460cdb825182138
+HashAppended: 0
+ClassTypes:
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Shaders/TriPlanarWorld.shader
+- Assets/Plugins/Oculus/SampleFramework/Core/Locomotion/Materials/ColumnGlow.shader
+Dependencies: []
