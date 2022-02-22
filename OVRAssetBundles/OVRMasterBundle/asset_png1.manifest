@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2952656250
+CRC: 2246589236
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ab5932c2b173e5550b31948ec6702723
+    Hash: aed751ba9c7422e8c10ab88499684331
   TypeTreeHash:
     serializedVersion: 2
     Hash: 4df8c69f2c8a6ad9e3cbf82bb83e4dc3
@@ -21,6 +21,7 @@ Assets:
 - Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/concrete_01_nml.png
 - Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/floor_wood_02_dif.png
 - Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/floor_tile_01_amb.png
+- Assets/ThirdParties/SimplePoly - Town Pack/Textures/sptp_Main_Texture.png
 - Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/wall_cinder_01_dif.png
 - Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/metal_01_nml.png
 Dependencies: []

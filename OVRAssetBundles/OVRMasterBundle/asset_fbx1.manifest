@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3033760849
+CRC: 3874670843
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 097117ca055db782109afcb98394d55c
+    Hash: a80e7a75cf8eaf3fa60d99957a5cb730
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 59a7f03a3b31741743bf8a7cab9a1d71
+    Hash: f64856a3d606b613608cbf22df470c60
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -23,45 +23,36 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
-- Class: 64
-  Script: {instanceID: 0}
-- Class: 74
-  Script: {instanceID: 0}
-- Class: 90
-  Script: {instanceID: 0}
-- Class: 95
-  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Plugins/Oculus/SampleFramework/Core/CustomHands/Animations/r_hand_cap_touch_thumb_mask_anim.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeCeiling_15.fbx
-- Assets/Plugins/Oculus/SampleFramework/Core/CustomHands/Animations/r_hand_hold_generic_anim.fbx
-- Assets/Plugins/Oculus/SampleFramework/Core/CustomHands/Animations/r_hand_fist_anim.fbx
-- Assets/Plugins/Oculus/SampleFramework/Core/CustomHands/Animations/l_hand_hold_generic_anim.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeCeiling_05.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/WalkWedge_01.fbx
-- Assets/Plugins/Oculus/SampleFramework/Core/CustomHands/Animations/l_hand_relax_mid_fist_anim.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/Cube_1_8.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/Cube_1_1.fbx
-- Assets/Plugins/Oculus/SampleFramework/Core/CustomHands/Animations/l_hand_thumbs_up_anim.fbx
-- Assets/Plugins/Oculus/SampleFramework/Core/CustomHands/Animations/r_hand_hold_ping_pong_ball_anim.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/Cube_1x1.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/GroundSection02.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_09.fbx
-- Assets/Plugins/Oculus/SampleFramework/Core/CustomHands/Animations/l_hand_relax_3qtr_fist_anim.fbx
-- Assets/Plugins/Oculus/SampleFramework/Core/CustomHands/Animations/l_hand_cap_touch_index_mask_anim.fbx
-- Assets/Plugins/Oculus/SampleFramework/Core/CustomHands/Animations/l_hand_point_anim.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/BridgePlatform01.fbx
-- Assets/Plugins/Oculus/SampleFramework/Core/CustomHands/Animations/l_hand_pinch_anim.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_08.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/WorldGeo.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_01.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/Tunnel_01.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_05.fbx
-- Assets/Plugins/Oculus/SampleFramework/Core/CustomHands/Animations/r_hand_point_anim.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_02.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/GroundSection01.fbx
-- Assets/Plugins/Oculus/SampleFramework/Core/CustomHands/Animations/l_hand_cap_touch_anim.fbx
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Models/ThinBars.fbx
-Dependencies:
-- C:/Users/nageo/Desktop/Unity/AwarenS/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_11.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_01.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_03.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_08.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Props/sptp_bin_01.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Nature/sptp_tree_02.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_25.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_17.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_21.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_04.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_24.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_07.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_grass_01.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_10.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_16.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_10.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_28.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_12.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Props/sptp_street_light_02.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_22.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_18.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Nature/sptp_bush_01.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_05.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_34.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Props/sptp_traffic_light_01.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_street_concrete_02.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_11.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Nature/sptp_stone_02.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_23.FBX
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Nature/sptp_stone_01.FBX
+Dependencies: []

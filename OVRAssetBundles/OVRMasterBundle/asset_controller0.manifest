@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3342997591
+CRC: 57955580
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 627d2c5b2582d2abc1134ccff31f031d
+    Hash: 3c4f4201be5587523f7155a527be9f6e
   TypeTreeHash:
     serializedVersion: 2
     Hash: fdf6c57a251b9f6ec27bdd2fe01b033c
@@ -15,8 +15,9 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Props/Animators/sptp_air_conditioning_04.controller
+- Assets/ThirdParties/SimplePoly - Town Pack/Meshes/Props/Animators/sptp_air_conditioning_03.controller
 - Assets/Plugins/Oculus/SampleFramework/Core/CustomHands/Models/LeftHandAnimator.controller
 - Assets/Plugins/Oculus/SampleFramework/Core/CustomHands/Models/RightHandAnimator.controller
 Dependencies:
 - C:/Users/nageo/Desktop/Unity/AwarenS/OVRAssetBundles/OVRMasterBundle/asset_fbx0
-- C:/Users/nageo/Desktop/Unity/AwarenS/OVRAssetBundles/OVRMasterBundle/asset_fbx1

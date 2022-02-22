@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1203629166
+CRC: 2481959086
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 302b7d0681e35fd22106ed87c85b7cf5
+    Hash: 441cc9f9e05167cd58217dd60648fd52
   TypeTreeHash:
     serializedVersion: 2
     Hash: 4df8c69f2c8a6ad9e3cbf82bb83e4dc3
@@ -16,33 +16,20 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Plugins/Oculus/SampleFramework/Core/DebugUI/Textures/dialog.png
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/wall_brick_01_nml.png
 - Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Materials/MeterGrid.png
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/grid_01_light.png
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/metal_01_dif.png
+- Assets/Plugins/Oculus/SampleFramework/Core/DebugUI/Textures/slider_slider.png
 - Assets/Plugins/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_02/Skybox02_Down-Y.png
 - Assets/Plugins/Oculus/SampleFramework/Core/DebugUI/Textures/button.png
 - Assets/Plugins/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_02/Skybox02_Back-Z.png
+- Assets/Plugins/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_02/Skybox02_Right-X.png
 - Assets/Plugins/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_02/Skybox02_Front+Z.png
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/floor_wood_01_dif.png
 - Assets/Plugins/Oculus/SampleFramework/Core/DebugUI/Textures/slider_bar.png
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/wall_cinder_01_msm.png
 - Assets/Plugins/Oculus/SampleFramework/Core/DebugUI/Textures/translucent_01.png
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/floor_wood_01_nml.png
 - Assets/Plugins/Oculus/SampleFramework/Core/DebugUI/Textures/radio_off.png
 - Assets/Plugins/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_02/Skybox02_Up+Y.png
 - Assets/Plugins/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_02/Skybox02_Left+X.png
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/floor_wood_02_msm.png
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/floor_tile_01_dif.png
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/concrete_01_dif.png
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/grid_01_dark.png
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/wall_cinder_01_nml.png
+- Assets/Materials/ThirdParties/SimplePoly/sptp_Main_Texture.png
 - Assets/Plugins/Oculus/SampleFramework/Core/DebugUI/Textures/radio_on.png
 - Assets/Plugins/Oculus/SampleFramework/Core/DebugUI/Textures/header.png
 - Assets/Plugins/Oculus/SampleFramework/Core/DebugUI/Textures/separator.png
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/floor_wood_01_msm.png
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/floor_tile_01_nml.png
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/wall_brick_01_dif.png
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/floor_wood_02_nml.png
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Textures/wall_brick_01_msm.png
 Dependencies: []

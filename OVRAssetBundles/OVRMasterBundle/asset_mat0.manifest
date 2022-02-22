@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2190300481
+CRC: 1344922997
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 37863333ccf02debbfa255f8a92bed90
+    Hash: f49cc37f9985338db6c7f872d8f1467f
   TypeTreeHash:
     serializedVersion: 2
     Hash: 939e20ecac0e95a3f7c5cfb3e57acb1d
@@ -17,24 +17,14 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Materials/MAT_grid_01_light.mat
 - Assets/Plugins/Oculus/SampleFramework/Core/Locomotion/Materials/ColumnGlow.mat
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Materials/MAT_cinderblock_01.mat
 - Assets/Plugins/Oculus/SampleFramework/Core/Locomotion/Materials/lambert1.mat
 - Assets/Plugins/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_02/Skybox02.mat
 - Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Materials/DebugDrawLine.mat
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Materials/MAT_floor_wood_02.mat
 - Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Materials/TriPlanarWorld.mat
+- Assets/Materials/ThirdParties/SimplePoly/sptp_Main_Mat.mat
 - Assets/Plugins/Oculus/SampleFramework/Core/Locomotion/Materials/TeleportLaser.mat
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Materials/MAT_metal_01.mat
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Materials/MAT_grid_01_dark.mat
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Materials/MAT_brick_01.mat
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Materials/MAT_floor_tile_01.mat
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Materials/MAT_floor_wood_01.mat
-- Assets/Plugins/Oculus/SampleFramework/Usage/Locomotion/Materials/MAT_concrete_01.mat
 - Assets/Plugins/Oculus/SampleFramework/Core/CustomHands/Materials/Hands_solid.mat
 Dependencies:
 - C:/Users/nageo/Desktop/Unity/AwarenS/OVRAssetBundles/OVRMasterBundle/asset_png0
-- C:/Users/nageo/Desktop/Unity/AwarenS/OVRAssetBundles/OVRMasterBundle/asset_png1
 - C:/Users/nageo/Desktop/Unity/AwarenS/OVRAssetBundles/OVRMasterBundle/asset_shader0
-- C:/Users/nageo/Desktop/Unity/AwarenS/OVRAssetBundles/OVRMasterBundle/asset_tga0
