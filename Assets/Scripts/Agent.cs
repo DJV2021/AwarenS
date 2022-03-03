@@ -2,48 +2,61 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Classe définissant le GameObject auquel elle est attachée comme un agent vis-à-vis de l'algorithme de flocking,
+// puis en génère le déplacement en temps réel lorsque le jeu tourne. Ceci se fait en modifiant, à chaque frame, le
+// vecteur vitesse du GameObject (qui doit donc avoir un RigidBody et un Collider) et non via une translation. De plus, 
+// l'algo ne gère les déplacement qu'en deux dimensions (selon les axes X et Z, au sol), la gravité n'est pas affectée (TODO).
+//
+// Le seul paramètre à régler pour l'agent est son controller: il faut lui indiquer quel GameObject doté d'un
+// AgentController supervise sa simulation. C'est à travers lui que seront déterminés les paramètres de la
+// simulation eux-mêmes (et c'est dans son script qu'ils sont explicités).
+
 public class Agent : MonoBehaviour
 {
-    public AgentController controller;
+    public AgentController controller;  // l'observer gérant la simulation
 
-
+    // paramètres de simulation
     private Vector3 generalDirection;
     private bool isDestination;
     private float FOVRadius;
-
-    private float coefInertie;
+    private float coefInertia;
     private float coefDirection;
-    private float coefDistanciation;
-    private float coefGroupement;
+    private float coefDistancing;
+    private float coefGrouping;
 
 
-    private Rigidbody body;
-    private Vector3 position;
-    private Vector3 direction;
-    private float speed;
-    private Collider[] neighbors;
+    private Rigidbody body;        // le RigidBody de l'agent
+    private Vector3 position;      // sa position actuelle
+    private Vector3 direction;     // sa direction actuelle
+    private float speed;           // sa vitesse (constante)
+    private Vector3 velocity;      // son vecteur vitesse actuel
+    private Collider[] neighbors;  // la liste des GameObjects actuellement voisins
 
 
-
+    // Initialisation de l'agent
     void Start()
     {
-        generalDirection = new Vector3(controller.generalDirection.x, 0f, controller.generalDirection.y);
-        isDestination = controller.isDestination;
-        speed = controller.speed * Random.Range(1-controller.varSpeed, 1+controller.varSpeed);
-        FOVRadius = controller.FOVRadius * Random.Range(1-controller.varFOV, 1+controller.varFOV);
-        coefInertie = controller.coefInertie * Random.Range(1-controller.varInertie, 1+controller.varInertie);
-        coefDirection = controller.coefDirection * Random.Range(1-controller.varDirection, 1+controller.varDirection);
-        coefDistanciation = controller.coefDistanciation * Random.Range(1-controller.varDistanciation, 1+controller.varDistanciation);
-        coefGroupement = controller.coefGroupement * Random.Range(1-controller.varGroupement, 1+controller.varGroupement);
+        gameObject.tag = "Agent";
 
         body = GetComponent<Rigidbody>();
         direction = new Vector3(Random.Range(-1f,1f), 0, Random.Range(-1f,1f));
         direction.Normalize();
+        velocity = new Vector3();
+
+        // --- Apparopriation des paramètres de la simulation par l'agent ---
+        generalDirection = new Vector3(controller.generalDirection.x, 0f, controller.generalDirection.y);
+        isDestination = controller.isDestination;
+        speed = controller.speed * Random.Range(1-controller.varSpeed, 1+controller.varSpeed);
+        FOVRadius = controller.FOVRadius * Random.Range(1-controller.varFOV, 1+controller.varFOV);
+        coefInertia = controller.coefInertia * Random.Range(1-controller.varInertia, 1+controller.varInertia);
+        coefDirection = controller.coefDirection * Random.Range(1-controller.varDirection, 1+controller.varDirection);
+        coefDistancing = controller.coefDistancing * Random.Range(1-controller.varDistancing, 1+controller.varDistancing);
+        coefGrouping = controller.coefGrouping * Random.Range(1-controller.varGrouping, 1+controller.varGrouping);
     }
 
-
-    private Vector3 Calc_Distanciation() {
-        float norme;
+    // Calcul de du vecteur de distanciation
+    private Vector3 Calc_Distancing() {
+        float norm;
         Vector3 tmp;
         Vector3 impact = new Vector3();
 
@@ -51,11 +64,11 @@ public class Agent : MonoBehaviour
         {
             if (neighbor.tag == "Agent") {
                 tmp = neighbor.transform.position - position;
-                norme = tmp.magnitude;
+                norm = tmp.magnitude;
 
-                if (norme != 0) {
+                if (norm != 0) {
                     tmp.Normalize();
-                    impact -=  ((1/norme) * FOVRadius * tmp) - tmp;
+                    impact -=  ((1/norm) * FOVRadius * tmp) - tmp;
                 }
             }
         }
@@ -64,8 +77,8 @@ public class Agent : MonoBehaviour
         return impact;
     }
 
-
-    private Vector3 Calc_Groupement() {
+    // Calcul du vecteur de regroupement
+    private Vector3 Calc_Grouping() {
         int n = 0;
         Vector3 impact = new Vector3();
 
@@ -82,39 +95,44 @@ public class Agent : MonoBehaviour
         return impact;
     }
 
-
+    // Mise à jour du vecteur position mis en mémoire (pour ne pas multiplier les appels à transform)
     private void MaJ_Position() {
         position = transform.position;
     }
 
-
-    //attention, ne compte PAS QUE les agents: tout ce qui a un collider est compté (ie le sol par exemple)
+    // Mise à jour de la liste des GameObjects voisins de l'agent (pour ne surtout pas multiplier les appels à OverlapSphere)
+    // attention, ne compte PAS QUE les agents: tout ce qui a un collider est compté (ie le sol par exemple)
     private void MaJ_Neighbors() {
         neighbors = Physics.OverlapSphere(position, FOVRadius);
     }
 
-
+    // Mise à jour du vecteur direction à l'aide des méthodes implémentées
     private void MaJ_Direction() {
-        Vector3 distanciation = Calc_Distanciation();
-        Vector3 groupement = Calc_Groupement();
-        
+        Vector3 Distancing = Calc_Distancing();
+        Vector3 Grouping = Calc_Grouping();
+
+        // isDestination change la façon de comprendre le vecteur direction
         if (isDestination) {
-            direction = coefInertie * direction + (generalDirection-position) * coefDirection + distanciation * coefDistanciation + coefGroupement * groupement;
+            direction = coefInertia * direction + (generalDirection-position) * coefDirection + Distancing * coefDistancing + coefGrouping * Grouping;
         }
         else {
-            direction = coefInertie * direction + generalDirection * coefDirection + distanciation * coefDistanciation + coefGroupement * groupement;
+            direction = coefInertia * direction + generalDirection * coefDirection + Distancing * coefDistancing + coefGrouping * Grouping;
         }
 
-        direction.Normalize();
+        direction.Normalize();  // la vitesse de l'agent reste constante, seule sa direction varie
     }
 
-
-    void Update()
-    {
+    // Mise à jour des paramètres puis mise à jour de body.velocity
+    void Update() {
         MaJ_Position();
         MaJ_Neighbors();
         MaJ_Direction();
 
-        body.velocity = direction * speed;
+        // pour ne pas interférer avec l'accélération verticale, ie la gravité
+        velocity.x = speed * direction.x; 
+        velocity.y = body.velocity.y; 
+        velocity.z = speed * direction.z;
+
+        body.velocity = velocity;
     }
 }
