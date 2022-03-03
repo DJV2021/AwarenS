@@ -14,7 +14,7 @@ PrefabInstance:
     - target: {fileID: 3305581528936025421, guid: 96c1702b56fa5a7488457a6a515ac58e, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 2d4ab7325312c5b47804b6fd1cbddcf3, type: 2}
+      objectReference: {fileID: 9100000, guid: 94fccebb7175a904ab592edf1ccb15e6, type: 2}
     - target: {fileID: 3305581528943329081, guid: 96c1702b56fa5a7488457a6a515ac58e, type: 3}
       propertyPath: m_Name
       value: Homme4
