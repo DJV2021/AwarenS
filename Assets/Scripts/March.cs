@@ -72,6 +72,8 @@ public class March : MonoBehaviour
         controller.varDirection  = varDirection;
         controller.varDistancing = varDistancing;
         controller.varGrouping   = varGrouping;
+
+        controller.Awake();
     }
 
 

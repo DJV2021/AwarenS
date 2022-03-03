@@ -84,7 +84,7 @@ public class AgentController : MonoBehaviour
 
 
     // calcule les pourcentages, normalise le vecteur direction s'il y a lieu
-    void Awake() {
+    public void Awake() {
         varSpeed /= 100;
         varFOV /= 100;
         varInertia /= 100;
