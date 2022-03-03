@@ -73,5 +73,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Pp]lugins/GitHub/*
 /[Aa]ssets/[Pp]lugins/Oculus/*
 /[Aa]ssets/[Pp]lugins/TextMeshPro/*
+/[Aa]ssets/[Pp]lugins/TextMesh Pro/*
+/[Aa]ssets/[Pp]lugins/AnyUI/*
 /[Aa]ssets/TextMeshPro
 /[Aa]ssets/ThirdParties/SimplePoly - Town Pack/*
