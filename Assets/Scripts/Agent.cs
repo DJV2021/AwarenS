@@ -60,10 +60,20 @@ public class Agent : MonoBehaviour
         Vector3 tmp;
         Vector3 impact = new Vector3();
 
-        foreach (var neighbor in neighbors)
+        foreach (Collider neighbor in neighbors)
         {
             if (neighbor.tag == "Agent") {
                 tmp = neighbor.transform.position - position;
+                norm = tmp.magnitude;
+
+                if (norm != 0) {
+                    tmp.Normalize();
+                    impact -=  ((1/norm) * FOVRadius * tmp) - tmp;
+                }
+            }
+
+            if (neighbor.tag == "Obstacle") {
+                tmp = neighbor.ClosestPointOnBounds(position) - position;
                 norm = tmp.magnitude;
 
                 if (norm != 0) {
