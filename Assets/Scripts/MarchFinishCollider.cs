@@ -6,7 +6,7 @@ public class MarchFinishCollider : MonoBehaviour
 {
     public March march;
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerExit(Collider other) {
         if (other.tag == "Agent") {
             march.Kill(other.gameObject);
         }

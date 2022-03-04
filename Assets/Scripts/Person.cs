@@ -34,7 +34,7 @@ public class Person : MonoBehaviour
     }
 
     void Update() {
-        personAngle = Vector3.Angle(Vector3.forward, personBody.velocity);
+        personAngle = Vector3.SignedAngle(Vector3.forward, personBody.velocity, Vector3.up);
         transform.rotation = Quaternion.Euler(personAngle * Vector3.up);
     }
 }
