@@ -2,8 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Person : MonoBehaviour
-{
+
+// Classe gérant l'attribution de modèle et l'orientation du prefab Person.
+//
+// 
+// A plusieurs attributs:
+//
+// - model, GameObject (prefab):
+// Les 8 modèles possible que peut prendre le prefab.
+
+
+public class Person : MonoBehaviour {
     public GameObject model1;
     public GameObject model2;
     public GameObject model3;
@@ -13,11 +22,13 @@ public class Person : MonoBehaviour
     public GameObject model7;
     public GameObject model8;
 
-    private int personModel; 
-    private Rigidbody personBody;
-    private float personAngle;
+    private int personModel;        // le modèle pris par le GameObject
+    private Rigidbody personBody;   // le RigidBody du Gameobject
+    private float personAngle;      // l'angle que fait le GameObject avec Vector3.forward
 
-    void Start() {
+
+    // Choisit un modèle au hasard et l'applique au GameObject
+    private void Start() {
         personModel = Random.Range(1, 9);
         personBody = GetComponent<Rigidbody>();
 
@@ -33,7 +44,9 @@ public class Person : MonoBehaviour
         }
     }
 
-    void Update() {
+
+    // Oriente le GameObject dans le sens de sa vitesse
+    private void Update() {
         personAngle = Vector3.SignedAngle(Vector3.forward, personBody.velocity, Vector3.up);
         transform.rotation = Quaternion.Euler(personAngle * Vector3.up);
     }
