@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 // Classe définissant le GameObject auquel elle est attachée comme un agent vis-à-vis de l'algorithme de flocking,
 // puis en génère le déplacement en temps réel lorsque le jeu tourne. Ceci se fait en modifiant, à chaque frame, le
 // vecteur vitesse du GameObject (qui doit donc avoir un RigidBody et un Collider) et non via une translation. De plus, 
@@ -11,11 +12,11 @@ using UnityEngine;
 // AgentController supervise sa simulation. C'est à travers lui que seront déterminés les paramètres de la
 // simulation eux-mêmes (et c'est dans son script qu'ils sont explicités).
 
-public class Agent : MonoBehaviour
-{
+
+public class Agent : MonoBehaviour {
     public AgentController controller;  // l'observer gérant la simulation
 
-    // paramètres de simulation
+    // --- Paramètres de simulation ---
     private Vector3 generalDirection;
     private bool isDestination;
     private float FOVRadius;
@@ -33,9 +34,8 @@ public class Agent : MonoBehaviour
     private Collider[] neighbors;  // la liste des GameObjects actuellement voisins
 
 
-    // Initialisation de l'agent
-    void Start()
-    {
+    // Initialise l'agent
+    private void Start() {
         gameObject.tag = "Agent";
 
         body = GetComponent<Rigidbody>();
@@ -54,16 +54,26 @@ public class Agent : MonoBehaviour
         coefGrouping = controller.coefGrouping * Random.Range(1-controller.varGrouping, 1+controller.varGrouping);
     }
 
-    // Calcul de du vecteur de distanciation
+
+    // Calcule le vecteur de distanciation
     private Vector3 Calc_Distancing() {
         float norm;
         Vector3 tmp;
         Vector3 impact = new Vector3();
 
-        foreach (var neighbor in neighbors)
-        {
-            if (neighbor.tag == "Agent") {
+        foreach (Collider neighbor in neighbors) {
+            if (neighbor.tag == "Agent") {                      // Si c'est un autre agent
                 tmp = neighbor.transform.position - position;
+                norm = tmp.magnitude;
+
+                if (norm != 0) {
+                    tmp.Normalize();
+                    impact -=  ((1/norm) * FOVRadius * tmp) - tmp;
+                }
+            }
+
+            if (neighbor.tag == "Obstacle") {                               // Si c'est un obstacle
+                tmp = neighbor.ClosestPointOnBounds(position) - position;
                 norm = tmp.magnitude;
 
                 if (norm != 0) {
@@ -77,14 +87,13 @@ public class Agent : MonoBehaviour
         return impact;
     }
 
-    // Calcul du vecteur de regroupement
+    // Calcule le vecteur de regroupement
     private Vector3 Calc_Grouping() {
         int n = 0;
         Vector3 impact = new Vector3();
 
-        foreach (var neighbor in neighbors)
-        {
-            if (neighbor.tag == "Agent") {
+        foreach (var neighbor in neighbors) {
+            if (neighbor.tag == "Agent") {               // Si c'est un autre agent
                 n++;
                 impact += neighbor.transform.position;
             }
@@ -95,18 +104,19 @@ public class Agent : MonoBehaviour
         return impact;
     }
 
-    // Mise à jour du vecteur position mis en mémoire (pour ne pas multiplier les appels à transform)
+
+    // Met à jour le vecteur position mis en mémoire (pour ne pas multiplier les appels à transform)
     private void MaJ_Position() {
         position = transform.position;
     }
 
-    // Mise à jour de la liste des GameObjects voisins de l'agent (pour ne surtout pas multiplier les appels à OverlapSphere)
+    // Met à jour la liste des GameObjects voisins de l'agent (pour ne surtout pas multiplier les appels à OverlapSphere)
     // attention, ne compte PAS QUE les agents: tout ce qui a un collider est compté (ie le sol par exemple)
     private void MaJ_Neighbors() {
         neighbors = Physics.OverlapSphere(position, FOVRadius);
     }
 
-    // Mise à jour du vecteur direction à l'aide des méthodes implémentées
+    // Met à jour le vecteur direction à l'aide des méthodes implémentées
     private void MaJ_Direction() {
         Vector3 Distancing = Calc_Distancing();
         Vector3 Grouping = Calc_Grouping();
@@ -122,8 +132,9 @@ public class Agent : MonoBehaviour
         direction.Normalize();  // la vitesse de l'agent reste constante, seule sa direction varie
     }
 
-    // Mise à jour des paramètres puis mise à jour de body.velocity
-    void Update() {
+
+    // Met à jour les paramètres puis le body.velocity
+    private void Update() {
         MaJ_Position();
         MaJ_Neighbors();
         MaJ_Direction();

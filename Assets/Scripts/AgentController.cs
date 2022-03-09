@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 // Classe définissant le GameObject auquel elle est attachée comme l'observer vis-à-vis de l'algorithme de flocking.
 // Son seul rôle est d'en définir les paramètres: tous les agents de la simulation doivent lui être liés.
 //
@@ -63,8 +64,8 @@ using UnityEngine;
 // Pourcentage de variation possible sur coefGrouping d'un agent à l'autre. Les valeurs finales seront
 // comprises dans [coefGrouping-varGrouping%, coefGrouping+varGrouping%], avec une probabilité uniforme,
 
-public class AgentController : MonoBehaviour
-{
+
+public class AgentController : MonoBehaviour {
     public Vector2 generalDirection = new Vector2(1f,0f);
     public bool isDestination = false;
     public float speed = 1f;
@@ -83,8 +84,8 @@ public class AgentController : MonoBehaviour
     public float varGrouping = 10f;
 
 
-    // calcule les pourcentages, normalise le vecteur direction s'il y a lieu
-    void Awake() {
+    // Calcule les pourcentages, normalise le vecteur direction s'il y a lieu
+    public void Awake() {
         varSpeed /= 100;
         varFOV /= 100;
         varInertia /= 100;
