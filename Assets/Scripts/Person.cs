@@ -30,7 +30,6 @@ public class Person : MonoBehaviour {
     public bool isAffected;
     private Modele model;
     public bool isWoman;
-    public Button yourButton;
 
     // Choisit un modèle au hasard et l'applique au GameObject
     private void Start() {
@@ -50,8 +49,6 @@ public class Person : MonoBehaviour {
         }
 
         isWoman = model.IsModeleAWoman;
-        Button btn = yourButton.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
     }
 
 
@@ -76,8 +73,4 @@ public class Person : MonoBehaviour {
         model.StopOutlineModele();
     }
 
-    void TaskOnClick()
-    {
-        SetGreen();
-    }
 }
