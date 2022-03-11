@@ -15,7 +15,7 @@ public class TelekinesisHand1 : MonoBehaviour
 
     public bool somethingHit = false;
 
-    private Selectable lastSelected = null;
+    private Person lastSelectedPerson = null;
 
     private GameObject selection;
 
@@ -64,31 +64,33 @@ public class TelekinesisHand1 : MonoBehaviour
         {
             endPosition = hit.point;
             selection = hit.collider.gameObject;
-            if (selection.GetComponent<Selectable>() != null)
+            if (selection.GetComponent<Person>() != null)
             {
-                if (lastSelected != null)
+                if (lastSelectedPerson != null)
                 {
-                    lastSelected.DisableHighlight1();
+                    //lastSelectedPerson.DisableHighlight1();
                 }
                 somethingHit = true;
-                lastSelected = selection.GetComponent<Selectable>();
-                lastSelected.EnableHighlight1();
+                Debug.Log('1');
+                lastSelectedPerson = selection.GetComponent<Person>();
+                //lastSelectedPerson.EnableHighlight1();
 
             }
             else
             {
-                if (lastSelected != null)
+                if (lastSelectedPerson != null)
                 {
-                    lastSelected.DisableHighlight1();
+                    //lastSelectedPerson.DisableHighlight1();
                 }
                 somethingHit = false;
+                Debug.Log('0');
             }
         }
         else
         {
-            if (lastSelected != null)
+            if (lastSelectedPerson != null)
                 {
-                    lastSelected.DisableHighlight1();
+                    //lastSelectedPerson.DisableHighlight1();
                 }
             somethingHit = false;
         }
