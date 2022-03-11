@@ -27,15 +27,15 @@ public class Person : MonoBehaviour {
     private Rigidbody personBody;   // le RigidBody du Gameobject
     private float personAngle;      // l'angle que fait le GameObject avec Vector3.forward
 
-    public bool isAffected;
+    public bool isVictim;
     private Modele model;
     public bool isWoman;
+    public float percentageOfInterest = 0.5f;
 
     // Choisit un modèle au hasard et l'applique au GameObject
     private void Start() {
         personModel = Random.Range(1, 9);
         personBody = GetComponent<Rigidbody>();
-        isAffected = false;
         switch (personModel)
         {
             case 1: model = Instantiate(model1, transform.position, Quaternion.Euler(Vector3.zero), transform); break;
@@ -49,6 +49,17 @@ public class Person : MonoBehaviour {
         }
 
         isWoman = model.IsModeleAWoman;
+        if (isWoman)
+        {
+            float tmp_random = Random.value;
+            if (tmp_random < percentageOfInterest)
+            {
+                SetYellow();
+
+                isVictim = true;
+            }
+        }
+        
     }
 
 
@@ -58,9 +69,9 @@ public class Person : MonoBehaviour {
         transform.rotation = Quaternion.Euler(personAngle * Vector3.up);
     }
 
-    public void SetGreen()
+    public void SetYellow()
     {
-        model.SetModeleGreen();
+        model.SetModeleYellow();
     }
 
     public void SetRed()

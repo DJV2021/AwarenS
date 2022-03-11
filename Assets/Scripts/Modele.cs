@@ -13,7 +13,7 @@ public class Modele : MonoBehaviour
     public bool IsModeleAWoman;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         hair.eraseRenderer = true;
         pants.eraseRenderer = true;
@@ -36,7 +36,7 @@ public class Modele : MonoBehaviour
         sleeves.color = 0;
     }
 
-    public void SetModeleGreen()
+    public void SetModeleYellow()
     {
         hair.eraseRenderer = false;
         hair.color = 1;
