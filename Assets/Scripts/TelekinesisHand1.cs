@@ -35,7 +35,7 @@ public class TelekinesisHand1 : MonoBehaviour
     void Update()
     {
         hand1 = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger);
-        if (hand1 > 0.9)
+        if (true)
         {
             toggled = true;
             telekinesisLine.enabled = true;
