@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4954189796353015427}
   - component: {fileID: 4954189796353015452}
   - component: {fileID: 4954189796353015426}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Person
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,14 +76,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1aa6c46d60a38841b0a5cfec069c0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model1: {fileID: -2869993231397217953, guid: b1eca2a5d0e0e494b9457365b217e5aa, type: 3}
-  model2: {fileID: 1771105548967799935, guid: 3a6674efc268e4045b48656710672c24, type: 3}
-  model3: {fileID: 4474201052393498752, guid: 18e445e8e2b71694baf67d1ab17fb664, type: 3}
-  model4: {fileID: 3310780786991659456, guid: a6fc1ad31b4b70e4a94cbe9f80b84c63, type: 3}
-  model5: {fileID: -5656720470705045599, guid: 2ea5bbb5c87df374dbf3467daac9242c, type: 3}
-  model6: {fileID: -5221602653931970168, guid: 2a2f6d623caefb244bc8def7c745e850, type: 3}
-  model7: {fileID: 7576702199279536229, guid: 7f6482d6478b4694dbbefb3fbddc94a8, type: 3}
-  model8: {fileID: 7678619858512533234, guid: 66ff5b49ea676194bbbfeb003b5cbefc, type: 3}
+  model1: {fileID: 4200340001886115216, guid: d363e52502b41ed4985334dde61e4f16, type: 3}
+  model2: {fileID: -6829301940562822686, guid: 3a6674efc268e4045b48656710672c24, type: 3}
+  model3: {fileID: 5840427409435697412, guid: 18e445e8e2b71694baf67d1ab17fb664, type: 3}
+  model4: {fileID: 6566866315711745549, guid: a6fc1ad31b4b70e4a94cbe9f80b84c63, type: 3}
+  model5: {fileID: 2587915715468405756, guid: 2ea5bbb5c87df374dbf3467daac9242c, type: 3}
+  model6: {fileID: 7953782006489908168, guid: 2a2f6d623caefb244bc8def7c745e850, type: 3}
+  model7: {fileID: 4823165615701940116, guid: 7f6482d6478b4694dbbefb3fbddc94a8, type: 3}
+  model8: {fileID: 7488735310992824248, guid: 66ff5b49ea676194bbbfeb003b5cbefc, type: 3}
+  isAffected: 0
+  isWoman: 0
+  yourButton: {fileID: 0}
 --- !u!114 &4954189796353015426
 MonoBehaviour:
   m_ObjectHideFlags: 0

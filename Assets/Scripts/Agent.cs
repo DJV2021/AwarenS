@@ -33,7 +33,6 @@ public class Agent : MonoBehaviour {
     private Vector3 velocity;      // son vecteur vitesse actuel
     private Collider[] neighbors;  // la liste des GameObjects actuellement voisins
 
-
     // Initialise l'agent
     private void Start() {
         gameObject.tag = "Agent";
