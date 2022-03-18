@@ -3,6 +3,7 @@ using UnityEngine;
 public class Data : ScriptableObject
 {
   #region Fields
+  
   #endregion
 
   #region Properties
