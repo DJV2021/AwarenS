@@ -84,9 +84,9 @@ MonoBehaviour:
   model6: {fileID: 7953782006489908168, guid: 2a2f6d623caefb244bc8def7c745e850, type: 3}
   model7: {fileID: 4823165615701940116, guid: 7f6482d6478b4694dbbefb3fbddc94a8, type: 3}
   model8: {fileID: 7488735310992824248, guid: 66ff5b49ea676194bbbfeb003b5cbefc, type: 3}
-  isAffected: 0
+  isVictim: 0
   isWoman: 0
-  yourButton: {fileID: 0}
+  percentageOfInterest: 0.5
 --- !u!114 &4954189796353015426
 MonoBehaviour:
   m_ObjectHideFlags: 0
