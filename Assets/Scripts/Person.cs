@@ -30,7 +30,9 @@ public class Person : MonoBehaviour {
     public bool isVictim;
     private Modele model;
     public bool isWoman;
-    public float percentageOfInterest = 0.5f;
+    public float percentageOfInterestPerson = SubjectButton.percentageOfInterest;
+
+    public float tmp_random;
 
     // Choisit un modèle au hasard et l'applique au GameObject
     private void Start() {
@@ -47,19 +49,17 @@ public class Person : MonoBehaviour {
             case 7: model = Instantiate(model7, transform.position, Quaternion.Euler(Vector3.zero), transform); break;
             case 8: model = Instantiate(model8, transform.position, Quaternion.Euler(Vector3.zero), transform); break;
         }
-
         isWoman = model.IsModeleAWoman;
         if (isWoman)
         {
-            float tmp_random = Random.value;
-            if (tmp_random < percentageOfInterest)
+            tmp_random = Random.value;
+            if (tmp_random < percentageOfInterestPerson)
             {
                 SetYellow();
 
                 isVictim = true;
             }
         }
-        
     }
 
 
@@ -67,6 +67,24 @@ public class Person : MonoBehaviour {
     private void Update() {
         personAngle = Vector3.SignedAngle(Vector3.forward, personBody.velocity, Vector3.up);
         transform.rotation = Quaternion.Euler(personAngle * Vector3.up);
+
+        if (percentageOfInterestPerson != SubjectButton.percentageOfInterest)
+        {
+            if (isWoman)
+            {
+                //tmp_random = Random.value; pas besoin je crois 
+                if (tmp_random < SubjectButton.percentageOfInterest)
+                {
+                    SetYellow();
+                    isVictim = true;
+                }
+                else
+                {
+                    StopOutline();
+                }
+            }
+            percentageOfInterestPerson = SubjectButton.percentageOfInterest;
+        }
     }
 
     public void SetYellow()
