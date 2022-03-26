@@ -70,15 +70,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-/[Aa]ssets/[Pp]lugins/GitHub/*
-/[Aa]ssets/[Pp]lugins/Oculus/*
-/[Aa]ssets/[Pp]lugins/TextMeshPro/*
-/[Aa]ssets/[Pp]lugins/TextMesh Pro/*
-/[Aa]ssets/[Pp]lugins/AnyUI/*
-/[Aa]ssets/TextMeshPro
-/[Aa]ssets/ThirdParties/SimplePoly - Town Pack/*
-/[Aa]ssets/ThirdParties/Distant Lands/*
-/[Aa]ssets/ThirdParties/MoveMotionPack/*
 
 # Rider
 ### Rider ###
@@ -163,10 +154,3 @@ fabric.properties
 Build/*
 
 OVRAssetBundles
-Assets/Distant Lands
-Assets/SimplePoly - Town Pack
-Assets/MoveMotionPack
-Assets/Oculus
-Assets/Shader
-ProjectSettings
-Assets/Plugins

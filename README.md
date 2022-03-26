@@ -32,6 +32,7 @@
   * [Distant Lands](https://assetstore.unity.com/packages/3d/characters/distant-lands-free-characters-178123)
   * [MoveMotionPack](https://assetstore.unity.com/packages/3d/animations/basic-motions-free-pack-25900)
   * [SimplePoly - Town Pack](https://assetstore.unity.com/packages/3d/environments/simplepoly-town-pack-62400)
+  * [Sci-fi GUI](https://assetstore.unity.com/packages/2d/gui/sci-fi-gui-skin-15606)
 * (**optional**) Download the [GitHub plugin](https://unity.github.com/), then drag and drop the .package in the project explorer, in **Assets/Plugins/GitHub**
 
 ## Notes for developers
