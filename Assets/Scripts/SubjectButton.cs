@@ -10,12 +10,7 @@ public class SubjectButton : MonoBehaviour
     void Start()
     {
         percentageOfInterest = 0.0f;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        WomenPhysicalAndOrSexualViolenceSince15();
     }
 
     public void WomenPhysicalAndOrSexualViolenceSince15()
